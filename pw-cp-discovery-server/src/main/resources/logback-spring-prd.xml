@@ -5,7 +5,7 @@
 		resource="org/springframework/boot/logging/logback/defaults.xml" />
 
 	<property name="APP_NAME" value="pw-cp-discovery-server" />
-	<property name="LOG_FOLDER_SUFFIX" value="${APP_NAME}_logs" />
+	<property name="LOG_FOLDER" value="${APP_NAME}_logs" />
 
 	<appender name="CONSOLE"
 		class="ch.qos.logback.core.ConsoleAppender">
@@ -17,7 +17,7 @@
 
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>../${LOG_FOLDER_SUFFIX}/${APP_NAME}.log</file>
+		<file>../${LOG_FOLDER}/${APP_NAME}.log</file>
 		<encoder>
 			<pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %-5level [%thread]
 				%logger{36}.%M - %message%n</pattern>
@@ -25,7 +25,7 @@
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- rollover frequency -->
-			<fileNamePattern>../${LOG_FOLDER_SUFFIX}/${APP_NAME}_%d{dd-MM-yyyy}.log
+			<fileNamePattern>../${LOG_FOLDER}/${APP_NAME}_%d{dd-MM-yyyy}.log
 			</fileNamePattern>
 		</rollingPolicy>
 	</appender>
