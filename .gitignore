@@ -1,4 +1,4 @@
 
 pw-cp-discovery-server/src/main/resources/application-dev.properties
 
-pw-cp-discovery-server_logs/pw-cp-discovery-server.log
+*.log
